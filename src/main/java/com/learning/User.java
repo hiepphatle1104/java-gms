@@ -4,52 +4,52 @@ import java.util.Scanner;
 import java.util.UUID;
 
 public abstract class User {
-    private String id;
-    private String username;
-    private UserRole role;
-    protected Scanner sc;
+  private String id;
+  private String username;
+  private UserRole role;
+  protected Scanner sc;
 
-    protected User(String tag, String username) {
-        this.username = username;
-        this.id = tag + "-" + UUID.randomUUID().toString().substring(0, 8);
-    }
+  protected User(String tag, String username) {
+    this.username = username;
+    this.id = tag + "-" + UUID.randomUUID().toString().substring(0, 8);
+  }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id='" + id + '\'' +
-                ", username='" + username + '\'' +
-                ", role=" + role +
-                '}';
-    }
+  @Override
+  public String toString() {
+    return "User{" +
+        "id='" + id + '\'' +
+        ", username='" + username + '\'' +
+        ", role=" + role +
+        '}';
+  }
 
-    public abstract void showMenu();
+  public abstract void showMenu();
 
-    public String getId() {
-        return id;
-    }
+  public String getId() {
+    return id;
+  }
 
-    public void setId(String id) {
-        this.id = id;
-    }
+  public void setId(String id) {
+    this.id = id;
+  }
 
-    public String getUsername() {
-        return username;
-    }
+  public String getUsername() {
+    return username;
+  }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+  public void setUsername(String username) {
+    this.username = username;
+  }
 
-    public UserRole getRole() {
-        return role;
-    }
+  public UserRole getRole() {
+    return role;
+  }
 
-    public void setRole(UserRole role) {
-        this.role = role;
-    }
+  public void setRole(UserRole role) {
+    this.role = role;
+  }
 
-    public void setScanner(Scanner sc) {
-        this.sc = sc;
-    }
+  public void setScanner(Scanner sc) {
+    this.sc = sc;
+  }
 }

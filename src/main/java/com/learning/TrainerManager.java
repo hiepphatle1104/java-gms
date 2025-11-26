@@ -1,22 +1,22 @@
 package com.learning;
 
 public class TrainerManager extends Manager<Trainer> {
-    @Override
-    public Trainer getUser(String name) {
-        return null;
-    }
+  @Override
+  public Trainer getUser(String name) {
+    return null;
+  }
 
-    @Override
-    public void addUser() {
-        IO.print("Please enter username: ");
-        String username = sc.nextLine();
+  @Override
+  public void addUser() {
+    IO.print("Please enter username: ");
+    String username = sc.nextLine();
 
-        this.userList.add(new Trainer(username));
-        IO.println("Success");
-    }
+    this.userList.add(new Trainer(username));
+    IO.println("Success");
+  }
 
-    @Override
-    public void updateUser() {
+  @Override
+  public void updateUser() {
 
-    }
+  }
 }

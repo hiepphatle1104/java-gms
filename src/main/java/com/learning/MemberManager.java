@@ -1,31 +1,31 @@
 package com.learning;
 
 public class MemberManager extends Manager<Member> {
-    @Override
-    public Member getUser(String name) {
-        return userList.stream().filter(u -> u.getUsername().equals(name)).findFirst().orElse(null);
-    }
+  @Override
+  public Member getUser(String name) {
+    return userList.stream().filter(u -> u.getUsername().equals(name)).findFirst().orElse(null);
+  }
 
-    @Override
-    public void addUser() {
-        IO.print("Please enter username: ");
-        String username = sc.nextLine();
-        Member user = new Member(username);
+  @Override
+  public void addUser() {
+    IO.print("Please enter username: ");
+    String username = sc.nextLine();
+    Member user = new Member(username);
 
-        IO.println("- Subscription Plan -");
-        SubscriptionService.listSubscriptions();
-        IO.print("Choose your plan (name): ");
-        String planName = sc.nextLine();
+    IO.println("- Subscription Plan -");
+    SubscriptionService.listSubscriptions();
+    IO.print("Choose your plan (name): ");
+    String planName = sc.nextLine();
 
-        Subscription sub = SubscriptionService.getSubscription(planName);
-        user.setMembership(new Membership(user.getId(), sub));
+    Subscription sub = SubscriptionService.getSubscription(planName);
+    user.setMembership(new Membership(user.getId(), sub));
 
-        this.userList.add(user);
-        IO.println("Success");
-    }
+    this.userList.add(user);
+    IO.println("Success");
+  }
 
-    @Override
-    public void updateUser() {
-    }
+  @Override
+  public void updateUser() {
+  }
 
 }
